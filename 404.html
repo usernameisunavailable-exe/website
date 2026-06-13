@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>404 - Peeled Potato</title>
-    <style>
-        body {
-            background-color: #0d0d0d;
-            color: #00ff66;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8">
+  <title>404 - Peeled Potato</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ff66;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
 
-        .console-box {
-            border: 2px solid #00ff66;
-            padding: 20px;
-            background-color: #1a1a1a;
-            box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
-            border-radius: 5px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center; /* Centers the potato and text */
-        }
+    .console-box {
+      border: 2px solid #00ff66;
+      padding: 20px;
+      background-color: #1a1a1a;
+      box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+      border-radius: 5px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      /* Centers the potato and text */
+    }
 
-        /* THE SPINNING POTATO MAGIC */
-        .potato-art {
-            font-size: 80px; /* Makes the potato emoji big */
-            margin: 5px 0;
-            display: inline-block; /* Required for transform animations to work */
-            animation: spin-potato 4s linear infinite;
-        }
+    /* THE SPINNING POTATO MAGIC */
+    .potato-art {
+      font-size: 80px;
+      /* Makes the potato emoji big */
+      margin: 5px 0;
+      display: inline-block;
+      /* Required for transform animations to work */
+      animation: spin-potato 4s linear infinite;
+    }
 
-        /* This defines the 360-degree rotation loop */
-        @keyframes spin-potato {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
+    /* This defines the 360-degree rotation loop */
+    @keyframes spin-potato {
+      from {
+        transform: rotate(0deg);
+      }
 
-        .blink {
-            animation: blinker 1s linear infinite;
-        }
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
-    </style>
+    .blink {
+      animation: blinker 1s linear infinite;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="console-box">
-        <h2>[404 PAGE NOT FOUND]</h2>
-        <hr style="border: 1px solid #00ff66;">
-        
-        <div class="potato-art">🥔</div>
+  <div class="console-box">
+    <h2>[404 PAGE NOT FOUND]</h2>
+    <hr style="border: 1px solid #00ff66;">
 
-        <p>The potato you are looking for has been peeled.</p>
-        <p>Please return to the void.</p>
-        <br>
-        <p style="text-align: left;">>> <span class="blink">_</span></p>
-    </div>
+    <div class="potato-art">🥔</div>
+
+    <p>The potato you are looking for has been eaten.</p>
+    <p>Please return to the void.</p>
+    <br>
+    <p style="text-align: left;">>> <span class="blink">_</span></p>
+  </div>
 
 </body>
+
 </html>
