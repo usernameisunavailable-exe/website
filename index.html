@@ -19,7 +19,7 @@
       color: var(--mtext)
     }
 
-    h3 {
+    h5 {
       color: var(--ntext);
       text-align: center;
     }
@@ -93,16 +93,24 @@
 <body>
   <p id="node" class="subtext">//node13@under my table//uptime: </p>
   <h1 id="logo">SPUDB<b>0</b>X</h1>
-  <h3>Ts is under construction</h3>
-  <h6>dont mind me here</h6>
-  <div class="terminal-box">
-    <a href="https://github.com/usernameisunavailable-exe" class="links">[GitHub]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-    <a href="files.spudbox.dev" class="links">[copyparty]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-    <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-    <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-    <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-    <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-  </div>
+  <h5 id="motd">Ts is under construction</h3>
+    <h6>dont mind me here</h6>
+    <div class="terminal-box">
+      <a href="https://github.com/usernameisunavailable-exe" class="links">[GitHub]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+      <a href="files.spudbox.dev" class="links">[copyparty]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+      <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+      <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+      <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+      <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+    </div>
+
+    <script>
+      let motds = ["powered by pure jank and a dream", "please do not unplug the router", "it gets hot under here", "THE serving potato", "I GOT 12GB OF RAM", "a random computer.", "hell yea femtanyl", "GOAT (Guaranteed Overheating Any Time)"];
+      let motdtext = document.getElementById("motd");
+      let number = Math.floor(Math.random() * motds.length);
+
+      motdtext.textContent = motds[number];
+    </script>
 </body>
 
 </html>
