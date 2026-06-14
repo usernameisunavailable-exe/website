@@ -1,0 +1,70 @@
+<!DOCTYPE html />
+
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="robifree">
+  <title>home - spudb0x.dev</title>
+  <meta name="viewport" content="width=device-width" />
+  <style>
+    :root {
+      --bg: #181818;
+      --mtext: #eeeeee;
+      --stext: #cccccc;
+      --ntext: #dddddd;
+    }
+
+    h1 {
+      color: var(--mtext)
+    }
+
+    h6 {
+      color: var(--ntext);
+    }
+
+    #node {
+      margin: 0.2%;
+    }
+
+
+    #logo {
+      font-size: 35px;
+      transition: 0.1s ease;
+      text-align: left;
+      letter-spacing: 0.6em;
+      margin: 0.2%;
+      margin-top: 0px;
+    }
+
+    #logo:hover {
+      font-size: 36px;
+    }
+
+    .subtext {
+      color: var(--stext);
+    }
+
+    body {
+      background-color: var(--bg);
+      font-family: "Atkinson Hyperlegible Mono Nerd Font", monospace;
+      text-shadow: 0px 0px 3px rgba(204, 204, 204, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <p id="node" class="subtext">//node13@under my table//uptime: </p>
+
+  <h1 id="logo">SPUDBOX</h1>
+
+  <script>
+    let nodenum = Math.floor(Math.random() * 70)
+    let node = document.getElementById("node")
+
+    node.textContent = ("//node" + nodenum + "@under my table//")
+  </script>
+
+</body>
+
+</html>

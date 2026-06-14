@@ -49,18 +49,14 @@
     }
 
     #node {
-      marginn: 0.1%;
+      margin: 0.1%;
     }
 
     .terminal-box {
-      border: 2px dashed var(--stext);
-      /* Fakes the ASCII border perfectly */
-      width: max-content;
-      /* Hugs the width to your longest link */
+      border: 2.5px dashed var(--stext);
+      width: min-content;
       margin: 0 auto;
-      /* Centers the box */
-      padding: 15px 40px;
-      /* Creates that empty space inside the box */
+      padding: 10px 15px;
       text-align: left;
     }
 
@@ -82,35 +78,41 @@
       color: var(--bg)
     }
 
-
     body {
       background-color: var(--bg);
       font-family: "Atkinson Hyperlegible Mono Nerd Font", monospace;
+      text-shadow: 0px 0px 3px rgba(204, 204, 204, 0.4);
     }
   </style>
 </head>
 
 <body>
   <p id="node" class="subtext">//node13@under my table//uptime: </p>
-  <h1 id="logo">SPUDB<b>0</b>X</h1>
-  <h5 id="motd">Ts is under construction</h3>
-    <h6>dont mind me here</h6>
-    <div class="terminal-box">
-      <a href="https://github.com/usernameisunavailable-exe" class="links">[GitHub]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-      <a href="files.spudbox.dev" class="links">[copyparty]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-      <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-      <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-      <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-      <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-    </div>
+  <h1 id="logo">SPUDB0X</h1>
+  <h5 id="motd">Ts is under construction</h5>
+  <!-- <h6>dont mind me here</h6>-->
+  <div class="terminal-box">
+    <a href="https://github.com/usernameisunavailable-exe" class="links">[GitHub]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+    <a href="files.spudbox.dev" class="links">[copyparty]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+    <a href="arch.html" class="links">[arch setup]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+    <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+    <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+    <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+  </div>
 
-    <script>
-      let motds = ["powered by pure jank and a dream", "please do not unplug the router", "it gets hot under here", "THE serving potato", "I GOT 12GB OF RAM", "a random computer.", "hell yea femtanyl", "GOAT (Guaranteed Overheating Any Time)"];
-      let motdtext = document.getElementById("motd");
-      let number = Math.floor(Math.random() * motds.length);
+  <script>
+    let motds = ["powered by pure jank and a dream", "please do not unplug the router", "it gets hot under here", "THE serving potato", "I GOT 12GB OF RAM", "a random computer.", "hell yea femtanyl", "GOAT (Guaranteed Overheating Any Time)"];
+    let motdtext = document.getElementById("motd");
+    let number = Math.floor(Math.random() * motds.length);
 
-      motdtext.textContent = motds[number];
-    </script>
+    motdtext.textContent = ("//" + motds[number] + "\\\\");
+
+
+    let nodenum = Math.floor(Math.random() * 70)
+    let node = document.getElementById("node")
+
+    node.textContent = ("//node" + nodenum + "@under my table//")
+  </script>
 </body>
 
 </html>
