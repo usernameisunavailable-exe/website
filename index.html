@@ -17,6 +17,7 @@
     }
 
     h1 {
+      text-align: center;
       color: var(--mtext)
     }
 
@@ -37,12 +38,16 @@
     #logo {
       font-size: 46px;
       transition: 0.1s ease;
-      text-align: center;
       letter-spacing: 0.6em;
+      margin: 0.2%;
+      margin-top: 0px;
+      color: var(--mtext);
     }
 
+
     #logo:hover {
-      font-size: 47px;
+      transform-origin: center;
+      transform: scale(1.06);
     }
 
     .subtext {
@@ -84,6 +89,15 @@
       font-family: "Atkinson Hyperlegible Mono Nerd Font", monospace;
       text-shadow: 0px 0px 3px rgba(204, 204, 204, 0.4);
     }
+
+    @media (min-width: 2560px) {
+      body {
+        transform: scale(1.5);
+        transform-origin: top center;
+        margin-top: 5%;
+        /* Gives it some breathing room from the top */
+      }
+    }
   </style>
 </head>
 
@@ -94,9 +108,9 @@
   <!-- <h6>dont mind me here</h6>-->
   <div class="terminal-box">
     <a href="https://github.com/usernameisunavailable-exe" class="links">[GitHub]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-    <a href="files.spudbox.dev" class="links">[copyparty]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+    <a href="https://files.spudbox.dev" class="links">[copyparty]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
     <a href="arch.html" class="links">[arch setup]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
-    <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
+    <a href="about.html" class="links">[about]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
     <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
     <a href="#" class="links">[placehold]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</a>
   </div>
