@@ -8,7 +8,9 @@
   <title>arch - spudb0x.dev</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <meta name="viewport" content="width=device-width" />
-  <style>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- <style>
     :root {
       --bg: #181818;
       --mtext: #eeeeee;
@@ -28,6 +30,11 @@
       color: var(--ntext);
       /*text-align: center;*/
     }
+
+    p {
+      color: var(--stext);
+    }
+
 
     #node {
       margin: 0.2%;
@@ -98,6 +105,10 @@
       text-decoration: none;
     }
 
+    a {
+      color: var(--mtext);
+    }
+
     #list li a:hover:not(.header) {
       background-color: var(--stext);
       color: var(--bg);
@@ -113,7 +124,7 @@
         /* Gives it some breathing room from the top */
       }
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
@@ -121,7 +132,8 @@
 
   <h1 id="logo"><a href="index.html">SPUDBOX</a></h1>
   <h2>arch setup</h2>
-
+  <p>dotfiles: </p>
+  <a href="https://www.github.com/usernameisunavailable-exe/dotfiles">are here</a>
   <input type="text" id="searchbox" onkeyup="search()" placeholder="package search...">
 
   <ul id="list">

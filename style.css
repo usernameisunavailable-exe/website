@@ -1,0 +1,159 @@
+:root {
+  --bg: #181818;
+  --mtext: #eeeeee;
+  --stext: #cccccc;
+  --ntext: #dddddd;
+}
+
+/* -----------------------------------------
+   GLOBAL TYPOGRAPHY & COLORS
+----------------------------------------- */
+body {
+  background-color: var(--bg);
+  font-family: "Atkinson Hyperlegible Mono Nerd Font", monospace;
+  text-shadow: 0px 0px 3px rgba(204, 204, 204, 0.4);
+  /* NOTE: Removed 'overflow: hidden' so your Arch and About pages can scroll! */
+}
+
+/* Grouping these saves you a ton of lines */
+h1,
+h2 {
+  color: var(--mtext);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: var(--ntext);
+}
+
+p,
+li,
+.subtext {
+  color: var(--stext);
+}
+
+a {
+  color: var(--mtext);
+}
+
+h5 {
+  text-align: center;
+}
+
+/* -----------------------------------------
+   INDEX PAGE: TERMINAL LINKS
+----------------------------------------- */
+.terminal-box {
+  width: min-content;
+  margin: 0 auto;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.links {
+  display: block;
+  background-color: var(--bg);
+  color: var(--stext);
+  text-decoration: none;
+}
+
+.links:hover {
+  background-color: var(--stext);
+  color: var(--bg);
+}
+
+/* -----------------------------------------
+   NODES & LOGOS
+----------------------------------------- */
+#node {
+  margin: 0.2%;
+}
+
+#logo,
+#logom {
+  color: var(--mtext);
+  letter-spacing: 0.6em;
+  margin: 0.2%;
+  margin-top: 0px;
+  transition: 0.1s ease;
+}
+
+#logo {
+  display: inline-block;
+  font-size: 35px;
+  text-align: left;
+}
+
+#logo a {
+  color: var(--mtext);
+  text-decoration: none;
+}
+
+#logo:hover {
+  transform-origin: left;
+  transform: scale(1.04);
+}
+
+#logom {
+  font-size: 46px;
+  text-align: center;
+  /* Fixed: Handled here instead of the invalid HTML attribute */
+}
+
+#logom:hover {
+  transform-origin: center;
+  transform: scale(1.06);
+}
+
+/* -----------------------------------------
+   ARCH PAGE: SEARCH & DOTFILES LIST
+----------------------------------------- */
+#searchbox {
+  font: inherit;
+  background-color: var(--bg);
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid var(--bg);
+  margin-bottom: 12px;
+  color: var(--stext);
+}
+
+#list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#list li a {
+  border: 1px solid var(--bg);
+  margin-top: -1px;
+  background-color: var(--bg);
+  padding: 10px;
+  margin: 0.2%;
+  font-size: 14px;
+  color: var(--mtext);
+  display: block;
+  text-decoration: none;
+}
+
+#list li a:hover:not(.header) {
+  background-color: var(--stext);
+  color: var(--bg);
+}
+
+/* -----------------------------------------
+   LARGE SCREEN SCALING
+----------------------------------------- */
+@media (min-width: 2560px) {
+  body {
+    transform: scale(1.5);
+    transform-origin: top center;
+    margin-top: 5%;
+  }
+}

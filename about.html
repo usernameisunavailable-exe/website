@@ -5,10 +5,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="author" content="robifree">
-  <title>home - spudb0x.dev</title>
+  <title>about - spudb0x.dev</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <meta name="viewport" content="width=device-width" />
-  <style>
+  <link rel="stylesheet" href="style.css">
+  <!-- <style>
     :root {
       --bg: #181818;
       --mtext: #eeeeee;
@@ -70,9 +71,6 @@
       transform: scale(1.04);
     }
 
-    .subtext {
-      color: var(--stext);
-    }
 
     body {
       background-color: var(--bg);
@@ -81,18 +79,19 @@
     }
 
     @media (min-width: 2560px) {
-      body {
+      body {this is my personal website project. still working on a domain idea but for now:
+(spudbox.dev)
         transform: scale(1.5);
         transform-origin: top center;
         margin-top: 5%;
         /* Gives it some breathing room from the top */
       }
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
-  <p id="node" class="subtext">//node13@under my table//uptime: </p>
+  <p id="node">//node13@under my table//uptime: </p>
   <h1 id="logo"><a href="index.html">SPUDBOX</a></h1>
   <h2>about me</h2>
   <h3>hello, i'm robifree (or just robi)</h3>
@@ -121,6 +120,25 @@
     <li>asus laptop – random small laptop for portability</li>
     <li>hp (insert type here) – homelab / server</li>
   </ul>
+  <h4>MCUs</h4>
+  <ul>
+    <li>ESP32(-C3)</li>
+    <li>Arduino UNO</li>
+  </ul>
+  <h4>equipment</h4>
+  <ul>
+    <li>idk, ill put smth here</li>
+  </ul>
+  <hr>
+  <h3>contact</h3>
+  <p>
+    i dont really want to put info out in the wild-digital-west, so:
+  </p>
+  <ul>
+    <li>email: thing@spudb0x.dev</li>
+    <li>github: usernameisunavailable-exe</li>
+  </ul>
+
   <script>
     let nodenum = Math.floor(Math.random() * 70)
     let node = document.getElementById("node")
