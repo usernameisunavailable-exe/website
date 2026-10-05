@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="210" height="210" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(5 5)">
+    <path d="M42.8991 42.2296C42.8991 42.2296 54.4259 37.6783 54.599 32.8453C54.7721 28.0123 52.5818 22.6077 52.5818 22.6077C52.5818 22.6077 50.3633 20.475 47.3375 13.65C44.3116 6.82499 35.2339 5.5453 35.2339 5.5453C35.2339 5.5453 22.9288 -7.62939e-06 17.8856 0C12.8425 0 8.60627 3.83907 8.60627 3.83907C8.60627 3.83907 0.133904 7.89139 0.133904 11.5172C0.133904 15.1429 -0.689571 24.686 1.74769 26.4468C1.74769 26.4468 4.87439 32.8452 6.58904 34.978C8.30367 37.1109 13.4476 42.2296 13.4476 42.2296C13.4476 42.2296 24.038 45.2154 27.9716 46.0685C31.9052 46.9216 42.8991 42.2296 42.8991 42.2296Z" fill="#DDDDDD" fill-rule="evenodd" stroke-width="1" stroke="#DDDDDD" transform="matrix(0.94 0.342 -0.342 0.94 32 93)" />
+    <path d="M100 100L100 100L200 50L100 0L0 50L100 100Z" fill="none" stroke-width="10" stroke="#DDDDDD" stroke-linejoin="round" />
+    <path d="M100 150L100 150L100 50L0 0L0 100L100 150Z" fill="none" stroke-width="10" stroke="#DDDDDD" stroke-linejoin="round" transform="translate(0 50)" />
+    <path d="M100 100L100 0L0 50L0 150L100 100Z" fill="none" stroke-width="10" stroke="#DDDDDD" stroke-linejoin="round" transform="translate(100 50)" />
+  </g>
+</svg>

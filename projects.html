@@ -1,0 +1,53 @@
+<!DOCTYPE html />
+
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="robifree">
+  <title>projects - implodium.dev</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p id="node">//node13@under my table//uptime: </p>
+  <h1 id="logo"><a href="index.html">~/implodium/projects ~></a></h1>
+  <h2>projects</h2>
+  <input type="text" id="searchbox" onkeyup="search()" placeholder="project search...">
+
+  <ul id="list">
+    <li><a href="projects/test.html">nothing here for now</a></li>
+  </ul>
+  <script>
+    let nodenum = Math.floor(Math.random() * 70)
+    let node = document.getElementById("node")
+
+    node.textContent = ("//node" + nodenum + "@under my table//")
+
+    function search() {
+      //ok to be fair i did steeal this off the internet...
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('searchbox');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("list");
+      li = ul.getElementsByTagName('li');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>
