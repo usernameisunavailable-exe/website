@@ -9,10 +9,10 @@
    GLOBAL TYPOGRAPHY & COLORS
 ----------------------------------------- */
 @font-face {
-    font-family: 'AtkynsonMono';
-    src: url('./font.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'AtkynsonMono';
+  src: url('./font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
@@ -71,6 +71,17 @@ h5 {
 .links:hover {
   background-color: var(--stext);
   color: var(--bg);
+}
+
+#motd:hover {
+  transition: 0.05s ease;
+  transform-origin: center;
+  transform: scale(1.06);
+}
+
+#motd {
+  transition: 0.05s ease;
+  transform-origin: center;
 }
 
 /* -----------------------------------------
