@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magyar Catboy Párt (MCP) - A puha jövőért!</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts: Montserrat (Headers) and Inter (Body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind Config for Custom Colors/Fonts -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            mcp: {
+              pink: '#FF69B4',      // Hot Pink
+              lightpink: '#FFC0CB', // Pink
+              darkpink: '#C71585',  // Medium Violet Red
+              red: '#CE2939',       // Hungarian Red
+              green: '#477050',     // Hungarian Green
+              dark: '#1F2937',      // Gray 800
+            }
+          },
+          boxShadow: {
+            'solid': '8px 8px 0px 0px rgba(255, 105, 180, 1)',
+            'solid-dark': '8px 8px 0px 0px rgba(31, 41, 55, 1)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom styles and animations */
+    .pattern-bg {
+      background-color: #fdf2f8;
+      background-image: radial-gradient(#FFC0CB 2px, transparent 2px);
+      background-size: 30px 30px;
+    }
+
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translate(0, 0px);
+      }
+
+      50% {
+        transform: translate(0, -10px);
+      }
+
+      100% {
+        transform: translate(0, -0px);
+      }
+    }
+
+    /* Form Customizations */
+    input[type="checkbox"]:checked {
+      background-color: #FF69B4;
+      border-color: #FF69B4;
+    }
+
+    /* Political Poster Text Effect */
+    .poster-text {
+      text-shadow: 2px 2px 0px #FFC0CB, -1px -1px 0px #FFC0CB;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white antialiased overflow-x-hidden">
+
+  <div class="h-2 w-full flex">
+    <div class="h-full w-1/3 bg-mcp-red"></div>
+    <div class="h-full w-1/3 bg-white"></div>
+    <div class="h-full w-1/3 bg-mcp-green"></div>
+  </div>
+
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b-4 border-mcp-pink shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="meow()">
+          <span class="font-heading font-black text-3xl text-mcp-dark tracking-tighter">
+            M<span class="text-mcp-pink">C</span>P
+          </span>
+          <i class="fa-solid fa-paw text-mcp-pink text-2xl ml-2 floating"></i>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="#rolunk" class="text-lg font-bold text-gray-700 hover:text-mcp-pink transition-colors">Rólunk</a>
+          <a href="#program" class="text-lg font-bold text-gray-700 hover:text-mcp-pink transition-colors">Program</a>
+          <a href="#vezetoseg"
+            class="text-lg font-bold text-gray-700 hover:text-mcp-pink transition-colors">Vezetőség</a>
+          <a href="#csatlakozas"
+            class="bg-mcp-pink text-white px-6 py-2 rounded-full font-bold hover:bg-mcp-darkpink transition-all shadow-solid hover:shadow-none hover:translate-y-1 hover:translate-x-1 uppercase tracking-wide">
+            Légy Tag! <i class="fa-solid fa-heart ml-1"></i>
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-gray-700 hover:text-mcp-pink focus:outline-none">
+            <i class="fa-solid fa-bars text-3xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b-4 border-mcp-pink">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#rolunk"
+          class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-mcp-pink hover:bg-pink-50">Rólunk</a>
+        <a href="#program"
+          class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-mcp-pink hover:bg-pink-50">Program</a>
+        <a href="#vezetoseg"
+          class="block px-3 py-2 text-base font-bold text-gray-700 hover:text-mcp-pink hover:bg-pink-50">Vezetőség</a>
+        <a href="#csatlakozas" class="block px-3 py-2 text-base font-bold text-mcp-pink hover:bg-pink-50">Légy Tag!</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="relative pt-24 pb-32 lg:pt-36 lg:pb-40 overflow-hidden pattern-bg">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div
+        class="inline-block mb-4 px-4 py-1 rounded-full bg-white border-2 border-mcp-pink text-mcp-pink font-bold text-sm sm:text-base uppercase tracking-widest shadow-sm">
+        2026-os Országgyűlési Választások
+      </div>
+      <h1
+        class="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-mcp-dark uppercase tracking-tight mb-6 poster-text">
+        Egy <span class="text-mcp-pink">szebb</span>,<br>
+        <span class="text-mcp-pink">bolyhosabb</span> jövőért!
+      </h1>
+      <p class="mt-4 max-w-2xl text-xl sm:text-2xl text-gray-700 mx-auto font-medium mb-10">
+        Elegünk van a szürke öltönyökből és az unalmas ígéretekből. A Magyar Catboy Párt elhozza az energiát, a
+        szeretetet és a kötelező délutáni szunyókálást hazánknak.
+      </p>
+      <div class="flex justify-center gap-4 flex-col sm:flex-row">
+        <a href="#csatlakozas"
+          class="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-lg text-white bg-mcp-pink shadow-solid hover:shadow-none hover:translate-y-2 hover:translate-x-2 transition-all uppercase">
+          Csatlakozom a falkához! <i class="fa-solid fa-arrow-right ml-2"></i>
+        </a>
+        <a href="#program"
+          class="inline-flex justify-center items-center px-8 py-4 text-lg font-bold rounded-lg text-mcp-dark bg-white border-4 border-mcp-dark shadow-solid-dark hover:shadow-none hover:translate-y-2 hover:translate-x-2 transition-all uppercase">
+          Olvasd el a programot
+        </a>
+      </div>
+    </div>
+
+    <!-- Decorative elements -->
+    <div class="absolute top-1/4 left-10 text-mcp-lightpink opacity-50 floating" style="animation-delay: 0s;">
+      <i class="fa-solid fa-cat text-6xl"></i>
+    </div>
+    <div class="absolute bottom-1/4 right-10 text-mcp-lightpink opacity-50 floating" style="animation-delay: 1s;">
+      <i class="fa-solid fa-fish text-5xl"></i>
+    </div>
+  </header>
+
+  <section id="rolunk" class="py-20 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2
+            class="font-heading font-black text-4xl sm:text-5xl text-mcp-dark uppercase mb-6 border-l-8 border-mcp-pink pl-4">
+            Kik vagyunk <br><span class="text-mcp-pink">Mi?</span>
+          </h2>
+          <div class="space-y-6 text-lg text-gray-600 font-medium">
+            <p>
+              A Magyar Catboy Párt (MCP) egy radikálisan új politikai formáció, amely felismerte a 21. század
+              legfontosabb problémáját: <strong>a társadalom krónikus cukiság- és energiahiányát.</strong>
+            </p>
+            <p>
+              Míg más pártok makrogazdasági mutatókról vitatkoznak, mi tudjuk, hogy az igazi boldogság kulcsa egy jól
+              behűtött Monster energiaital és a puha, bolyhos macskafülek viselése. Célunk egy olyan Magyarország
+              felépítése, ahol a dorombolás alapvető állampolgári jog, és ahol senkit sem ítélnek meg azért, ha nyafog
+              egy kicsit hétfő reggel.
+            </p>
+            <p class="text-mcp-pink font-bold text-xl italic">
+              "Ne azt kérdezd, mit tehet érted a hazád, hanem hogy te hányszor mondtad ma, hogy 'nya'."
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <!-- Brutalist style image container -->
+          <div
+            class="bg-mcp-darkpink border-4 border-mcp-dark shadow-solid-dark rounded-2xl overflow-hidden relative group">
+            <img src="https://placehold.co/800x600/FF69B4/FFFFFF?text=Politikai+Kampány+Kép\n(Catboy+Öltönyben)"
+              alt="MCP Képviselő" class="w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-mcp-dark text-white p-4 text-center font-bold font-heading uppercase text-xl">
+              Komoly politika. Puha mancsok.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="program" class="py-20 bg-mcp-dark text-white relative">
+    <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+      <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+          fill="#ffffff"></path>
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <div class="text-center mb-16">
+        <h2 class="font-heading font-black text-4xl sm:text-5xl uppercase mb-4 text-mcp-pink">Választási Programunk</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">A négy pillér, amelyre az Új, Bolyhos Magyarországot építjük.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Manifesto Item 1 -->
+        <div
+          class="bg-gray-800 border-4 border-mcp-pink p-8 rounded-xl shadow-[8px_8px_0px_0px_rgba(255,105,180,1)] hover:-translate-y-2 hover:translate-x-2 hover:shadow-none transition-all">
+          <div class="text-mcp-pink text-5xl mb-6">
+            <i class="fa-solid fa-ear-listen"></i>
+          </div>
+          <h3 class="font-heading font-bold text-2xl uppercase mb-3">Kötelező Macskafül Péntek</h3>
+          <p class="text-gray-300">
+            A hivatalos ügyintézés és az irodai munka túlságosan stresszes. Törvénybe iktatjuk, hogy minden pénteken
+            kötelező a macskafülek viselése az állami intézményekben a morál növelése érdekében.
+          </p>
+        </div>
+
+        <!-- Manifesto Item 2 -->
+        <div
+          class="bg-gray-800 border-4 border-white p-8 rounded-xl shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-2 hover:translate-x-2 hover:shadow-none transition-all">
+          <div class="text-white text-5xl mb-6">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="font-heading font-bold text-2xl uppercase mb-3">Hatósági Áras Energiaital</h3>
+          <p class="text-gray-300">
+            Az energiaital alapvető élelmiszer! Bevezetjük a Monster és Hell energiaitalok hatósági árát (250 Ft/doboz),
+            és a Rezsicsökkentés részeként minden háztartás kap havi egy tálca ingyen támogatást.
+          </p>
+        </div>
+
+        <!-- Manifesto Item 3 -->
+        <div
+          class="bg-gray-800 border-4 border-mcp-green p-8 rounded-xl shadow-[8px_8px_0px_0px_rgba(71,112,80,1)] hover:-translate-y-2 hover:translate-x-2 hover:shadow-none transition-all">
+          <div class="text-mcp-green text-5xl mb-6">
+            <i class="fa-solid fa-bed"></i>
+          </div>
+          <h3 class="font-heading font-bold text-2xl uppercase mb-3">Törvénybe Iktatott Napi Szieszta</h3>
+          <p class="text-gray-300">
+            Senki sem tud 8 órát egyhuzamban produktívan dolgozni. Bevezetjük a kötelező délutáni 1,5 órás sziesztát,
+            minden munkahelyen puha takarókat és párnákat kell biztosítani a "doromboló szobákban".
+          </p>
+        </div>
+
+        <!-- Manifesto Item 4 -->
+        <div
+          class="bg-gray-800 border-4 border-mcp-red p-8 rounded-xl shadow-[8px_8px_0px_0px_rgba(206,41,57,1)] hover:-translate-y-2 hover:translate-x-2 hover:shadow-none transition-all">
+          <div class="text-mcp-red text-5xl mb-6">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 class="font-heading font-bold text-2xl uppercase mb-3">Ingyenes Nyávogás-Terápia</h3>
+          <p class="text-gray-300">
+            A mentális egészség fontos. Az OEP által támogatott lesz az úgynevezett "nyávogás-terápia", ahol a páciensek
+            szakemberek jelenlétében panaszkodhatnak és adhatnak ki cicahangokat a feszültség levezetéseként.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+      <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+          fill="#fdf2f8"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section id="vezetoseg" class="py-20 pattern-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-heading font-black text-4xl sm:text-5xl text-mcp-dark uppercase mb-4">A Párt <span
+            class="text-mcp-pink">Vezetősége</span></h2>
+        <div class="h-1 w-24 bg-mcp-pink mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Leader 1 -->
+        <div
+          class="bg-white border-4 border-mcp-dark p-6 rounded-2xl text-center shadow-solid-dark flex flex-col items-center group cursor-pointer hover:-translate-y-2 transition-transform">
+          <img src="https://placehold.co/400x400/FF69B4/FFFFFF?text=F%C5%91-Ny%C3%A1vog%C3%B3" alt="Pártelnök"
+            class="w-48 h-48 rounded-full border-4 border-mcp-pink object-cover mb-6 group-hover:scale-110 transition-transform">
+          <h3 class="font-heading font-bold text-2xl uppercase mb-1">Nyafka Béla</h3>
+          <p class="text-mcp-pink font-bold mb-4">Pártelnök (Fő-Catboy)</p>
+          <p class="text-gray-600 text-sm italic">"Egyetlen szavazat a Catboyokra olyan, mint egy tálca finom falat."
+          </p>
+        </div>
+
+        <!-- Leader 2 -->
+        <div
+          class="bg-white border-4 border-mcp-dark p-6 rounded-2xl text-center shadow-solid-dark flex flex-col items-center group cursor-pointer hover:-translate-y-2 transition-transform">
+          <img src="https://placehold.co/400x400/477050/FFFFFF?text=Energia%C3%BCgyi" alt="Alelnök"
+            class="w-48 h-48 rounded-full border-4 border-mcp-green object-cover mb-6 group-hover:scale-110 transition-transform">
+          <h3 class="font-heading font-bold text-2xl uppercase mb-1">Pörgetős Zoli</h3>
+          <p class="text-mcp-green font-bold mb-4">Alelnök / Energiaital-ügyi Szakértő</p>
+          <p class="text-gray-600 text-sm italic">"Ha nincs koffein a vérben, a nemzet elvérzik!"</p>
+        </div>
+
+        <!-- Leader 3 -->
+        <div
+          class="bg-white border-4 border-mcp-dark p-6 rounded-2xl text-center shadow-solid-dark flex flex-col items-center group cursor-pointer hover:-translate-y-2 transition-transform">
+          <img src="https://placehold.co/400x400/CE2939/FFFFFF?text=Dorombol%C3%A1s" alt="Kincstárnok"
+            class="w-48 h-48 rounded-full border-4 border-mcp-red object-cover mb-6 group-hover:scale-110 transition-transform">
+          <h3 class="font-heading font-bold text-2xl uppercase mb-1">Bolyhos Gábor</h3>
+          <p class="text-mcp-red font-bold mb-4">Kincstárnok / Dorombolási Miniszterjelölt</p>
+          <p class="text-gray-600 text-sm italic">"Az államadósságot is el lehet aludni, csak elég puha kell legyen a
+            párna."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="csatlakozas" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-mcp-dark text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        <!-- BG Accents -->
+        <div class="absolute -top-24 -right-24 text-gray-700 opacity-20">
+          <i class="fa-solid fa-paw text-9xl"></i>
+        </div>
+
+        <div class="relative z-10">
+          <div class="text-center mb-10">
+            <h2 class="font-heading font-black text-4xl sm:text-5xl uppercase mb-4 text-white">Légy te is <span
+                class="text-mcp-pink">Catboy!</span></h2>
+            <p class="text-gray-300">Töltsd ki a csatlakozási nyilatkozatot, és lépj be a pártba. A hazának szüksége van
+              rád (és a füleidre).</p>
+          </div>
+
+          <form id="joinForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">Polgári Név
+                  / Catboy Név</label>
+                <input type="text" id="name" required
+                  class="w-full bg-gray-700 text-white border-2 border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-mcp-pink transition-colors placeholder-gray-500"
+                  placeholder="Pl: Kiss 'Nyah' József">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">E-mail
+                  Cím</label>
+                <input type="email" id="email" required
+                  class="w-full bg-gray-700 text-white border-2 border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-mcp-pink transition-colors placeholder-gray-500"
+                  placeholder="nyah@macska.hu">
+              </div>
+            </div>
+
+            <div>
+              <label for="energyDrink"
+                class="block text-sm font-bold text-gray-300 mb-2 uppercase tracking-wide">Kedvenc Energiaitalod (Fontos
+                politikai adat!)</label>
+              <select id="energyDrink"
+                class="w-full bg-gray-700 text-white border-2 border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:border-mcp-pink transition-colors">
+                <option value="monster-white">Monster (Fehér / Ultra)</option>
+                <option value="monster-original">Monster (Eredeti)</option>
+                <option value="hell-classic">Hell Classic</option>
+                <option value="hell-apple">Hell Apple</option>
+                <option value="redbull">Red Bull (Burzsoá választás)</option>
+                <option value="water">Víz (Gyanús, de elfogadható)</option>
+              </select>
+            </div>
+
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input id="ears" type="checkbox" required
+                  class="w-5 h-5 bg-gray-700 border-gray-600 rounded focus:ring-mcp-pink focus:ring-2 cursor-pointer appearance-none checked:bg-mcp-pink checked:border-transparent relative">
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="ears" class="font-medium text-gray-300 cursor-pointer">Büntetőjogi felelősségem tudatában
+                  kijelentem, hogy hajlandó vagyok macskafület hordani a pártrendezvényeken.</label>
+              </div>
+            </div>
+
+            <button type="submit"
+              class="w-full bg-mcp-pink hover:bg-mcp-darkpink text-white font-black text-xl py-4 rounded-xl shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none hover:translate-y-1 hover:translate-x-1 transition-all uppercase tracking-widest mt-8">
+              Csatlakozási Kérelem Leadása <i class="fa-solid fa-paper-plane ml-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="successModal"
+    class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+    <div
+      class="bg-white border-4 border-mcp-pink rounded-3xl p-8 max-w-md w-full text-center shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+      id="modalContent">
+      <div class="text-mcp-pink text-6xl mb-4 floating">
+        <i class="fa-solid fa-cat"></i>
+      </div>
+      <h3 class="font-heading font-black text-3xl uppercase text-mcp-dark mb-2">Nyah! Sikeresen jelentkeztél!</h3>
+      <p class="text-gray-600 font-medium mb-6">Köszöntünk a Magyar Catboy Párt soraiban. Készítsd elő a füleket és az
+        energiaitalt, hamarosan felvesszük veled a kapcsolatot!</p>
+      <button onclick="closeModal()"
+        class="bg-mcp-dark text-white px-8 py-3 rounded-xl font-bold uppercase tracking-wide hover:bg-mcp-pink transition-colors">
+        Dorombolok egyet (Bezár)
+      </button>
+    </div>
+  </div>
+
+  <footer class="bg-mcp-dark border-t-8 border-mcp-pink pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-white text-3xl font-heading font-black mb-4 md:mb-0">
+          M<span class="text-mcp-pink">C</span>P <i class="fa-solid fa-paw text-mcp-pink text-xl"></i>
+        </div>
+
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-mcp-pink text-2xl transition-colors"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-mcp-pink text-2xl transition-colors"><i
+              class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-mcp-pink text-2xl transition-colors"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-mcp-pink text-2xl transition-colors"><i
+              class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div
+        class="mt-8 pt-8 border-t border-gray-700 text-center flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <p>&copy; 2026 Magyar Catboy Párt. Minden jog fenntartva (kivéve a délutáni alvás jogát, az mindenkinek jár).
+        </p>
+        <p class="mt-2 md:mt-0 italic">Készült 100% energiaital és nyávogás hajtással.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+
+    // Easter Egg Meow
+    function meow() {
+      console.log("Nyah! 🐾");
+      const logoIcon = document.querySelector('.fa-paw');
+      logoIcon.classList.remove('text-mcp-pink');
+      logoIcon.classList.add('text-mcp-red');
+      setTimeout(() => {
+        logoIcon.classList.remove('text-mcp-red');
+        logoIcon.classList.add('text-mcp-pink');
+      }, 300);
+    }
+
+    // Form Handling & Modal
+    const joinForm = document.getElementById('joinForm');
+    const successModal = document.getElementById('successModal');
+    const modalContent = document.getElementById('modalContent');
+
+    joinForm.addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent actual submission
+
+      // Show modal
+      successModal.classList.remove('hidden');
+      successModal.classList.add('flex');
+
+      // Trigger animation
+      setTimeout(() => {
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+      }, 10);
+
+      // Reset form
+      joinForm.reset();
+    });
+
+    function closeModal() {
+      // Reverse animation
+      modalContent.classList.remove('scale-100', 'opacity-100');
+      modalContent.classList.add('scale-95', 'opacity-0');
+
+      // Hide modal after animation
+      setTimeout(() => {
+        successModal.classList.add('hidden');
+        successModal.classList.remove('flex');
+      }, 300);
+    }
+
+        // Checkbox visual styling hack for standard checkboxes if needed
+        // (Handled primarily by Tailwind classes in HTML)
+  </script>
+</body>
+
+</html>
