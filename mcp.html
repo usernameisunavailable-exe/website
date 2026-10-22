@@ -508,8 +508,10 @@
       const emailInput = document.getElementById('email').value;
       const submitBtn = joinForm.querySelector("button[type='submit']");
       const originalHTML = submitBtn.innerHTML;
+      const name = document.getElementById('name').value;
+      const energyDrink = document.getElementById('energyDrink').value;
 
-      submitBtn.innerText = "Transmitting... 🐾";
+      submitBtn.innerText = "Küldés...";
 
       let response;
 
@@ -517,11 +519,15 @@
         response = await fetch("https://emil.uuuuuzhhh.workers.dev", {
           method: "POST",
           headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({email: emailInput})
+          body: JSON.stringify({
+            email: emailInput,
+            name: name,
+            energyDrink: energyDrink
+          })
         });
 
         if (response.ok) {
-          submitBtn.innerText = "Welcome Comrade :3";
+          submitBtn.innerText = "Hell yea testvér! :3";
           submitBtn.classList.add("bg-pink-600");
 
           // Trigger the success modal
@@ -535,10 +541,10 @@
           // Now it's safe to reset the form
           joinForm.reset();
         } else {
-          submitBtn.innerText = "Error. Anti-catboy interference detected.";
+          submitBtn.innerText = "Hiba! Anti-catboy tűzfal érzékelve...";
         }
       } catch (error) {
-        submitBtn.innerText = "Connection to Emil failed.";
+        submitBtn.innerText = "A kapcsolat emil fiamhoz sikertelen..."";
       }
 
       setTimeout(() => {
