@@ -310,7 +310,7 @@
           class="bg-white border-4 border-mcp-dark p-6 rounded-2xl text-center shadow-solid-dark flex flex-col items-center group cursor-pointer hover:-translate-y-2 transition-transform">
           <img src="https://placehold.co/400x400/FF69B4/FFFFFF?text=F%C5%91-Ny%C3%A1vog%C3%B3" alt="Pártelnök"
             class="w-48 h-48 rounded-full border-4 border-mcp-pink object-cover mb-6 group-hover:scale-110 transition-transform">
-          <h3 class="font-heading font-bold text-2xl uppercase mb-1">Nyafka Béla</h3>
+          <h3 class="font-heading font-bold text-2xl uppercase mb-1">robi</h3>
           <p class="text-mcp-pink font-bold mb-4">Pártelnök (Fő-Catboy)</p>
           <p class="text-gray-600 text-sm italic">"Egyetlen szavazat a Catboyokra olyan, mint egy tálca finom falat."
           </p>
@@ -321,7 +321,7 @@
           class="bg-white border-4 border-mcp-dark p-6 rounded-2xl text-center shadow-solid-dark flex flex-col items-center group cursor-pointer hover:-translate-y-2 transition-transform">
           <img src="https://placehold.co/400x400/477050/FFFFFF?text=Energia%C3%BCgyi" alt="Alelnök"
             class="w-48 h-48 rounded-full border-4 border-mcp-green object-cover mb-6 group-hover:scale-110 transition-transform">
-          <h3 class="font-heading font-bold text-2xl uppercase mb-1">Pörgetős Zoli</h3>
+          <h3 class="font-heading font-bold text-2xl uppercase mb-1">uhh idk valaki</h3>
           <p class="text-mcp-green font-bold mb-4">Alelnök / Energiaital-ügyi Szakértő</p>
           <p class="text-gray-600 text-sm italic">"Ha nincs koffein a vérben, a nemzet elvérzik!"</p>
         </div>
@@ -329,10 +329,10 @@
         <!-- Leader 3 -->
         <div
           class="bg-white border-4 border-mcp-dark p-6 rounded-2xl text-center shadow-solid-dark flex flex-col items-center group cursor-pointer hover:-translate-y-2 transition-transform">
-          <img src="https://placehold.co/400x400/CE2939/FFFFFF?text=Dorombol%C3%A1s" alt="Kincstárnok"
+          <img src="https://cpy.implodium.dev/shr/6wepnui1wsy0/cat.png" alt="Kincstárnok"
             class="w-48 h-48 rounded-full border-4 border-mcp-red object-cover mb-6 group-hover:scale-110 transition-transform">
-          <h3 class="font-heading font-bold text-2xl uppercase mb-1">Bolyhos Gábor</h3>
-          <p class="text-mcp-red font-bold mb-4">Kincstárnok / Dorombolási Miniszterjelölt</p>
+          <h3 class="font-heading font-bold text-2xl uppercase mb-1">kolbászka</h3>
+          <p class="text-mcp-red font-bold mb-4">Dorombolási Miniszterjelölt</p>
           <p class="text-gray-600 text-sm italic">"Az államadósságot is el lehet aludni, csak elég puha kell legyen a
             párna."</p>
         </div>
@@ -517,9 +517,37 @@
         successModal.classList.remove('flex');
       }, 300);
     }
+    document.querySelector("form").addEventListener("submit", async (e) => {
+      e.preventDefault(); // Stop the page from reloading
 
-        // Checkbox visual styling hack for standard checkboxes if needed
-        // (Handled primarily by Tailwind classes in HTML)
+      const emailInput = document.querySelector("input[type='email']").value;
+      const btn = document.querySelector("button[type='submit']");
+      const originalText = btn.innerText;
+
+      btn.innerText = "Transmitting... 🐾";
+
+      try {
+        const response = await fetch("emil.uuuuuzhhh.workers.dev", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({email: emailInput})
+        });
+
+        if (response.ok) {
+          btn.innerText = "Welcome Comrade :3";
+          btn.classList.add("bg-pink-600"); // Visual confirmation
+        } else {
+          btn.innerText = "Error. Anti-catboy interference detected.";
+        }
+      } catch (error) {
+        btn.innerText = "Connection to Emil failed.";
+      }
+
+      setTimeout(() => {if (!response?.ok) btn.innerText = originalText;}, 3000);
+    });
+
+  // Checkbox visual styling hack for standard checkboxes if needed
+  // (Handled primarily by Tailwind classes in HTML)
   </script>
 </body>
 
