@@ -516,35 +516,37 @@
         successModal.classList.add('hidden');
         successModal.classList.remove('flex');
       }, 300);
-    }
-    document.querySelector("form").addEventListener("submit", async (e) => {
-      e.preventDefault(); // Stop the page from reloading
+      document.querySelector("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-      const emailInput = document.querySelector("input[type='email']").value;
-      const btn = document.querySelector("button[type='submit']");
-      const originalText = btn.innerText;
+        const emailInput = document.querySelector("input[type='email']").value;
+        const btn = document.querySelector("button[type='submit']");
+        const originalText = btn.innerText;
 
-      btn.innerText = "Transmitting... 🐾";
+        btn.innerText = "Transmitting... 🐾";
 
-      try {
-        const response = await fetch("emil.uuuuuzhhh.workers.dev", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({email: emailInput})
-        });
+        let response; // Declared outside the try block
 
-        if (response.ok) {
-          btn.innerText = "Welcome Comrade :3";
-          btn.classList.add("bg-pink-600"); // Visual confirmation
-        } else {
-          btn.innerText = "Error. Anti-catboy interference detected.";
+        try {
+          // Added https:// to the URL
+          response = await fetch("https://emil.uuuuuzhhh.workers.dev", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({email: emailInput})
+          });
+
+          if (response.ok) {
+            btn.innerText = "Welcome Comrade :3";
+            btn.classList.add("bg-pink-600");
+          } else {
+            btn.innerText = "Error. Anti-catboy interference detected.";
+          }
+        } catch (error) {
+          btn.innerText = "Connection to Emil failed.";
         }
-      } catch (error) {
-        btn.innerText = "Connection to Emil failed.";
-      }
 
-      setTimeout(() => {if (!response?.ok) btn.innerText = originalText;}, 3000);
-    });
+        setTimeout(() => {if (!response?.ok) btn.innerText = originalText;}, 3000);
+      });
 
   // Checkbox visual styling hack for standard checkboxes if needed
   // (Handled primarily by Tailwind classes in HTML)
