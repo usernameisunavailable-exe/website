@@ -484,27 +484,10 @@
       }, 300);
     }
 
-    // Form Handling & Modal
+    // Form Handling, Emil & Modal
     const joinForm = document.getElementById('joinForm');
     const successModal = document.getElementById('successModal');
     const modalContent = document.getElementById('modalContent');
-
-    joinForm.addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevent actual submission
-
-      // Show modal
-      successModal.classList.remove('hidden');
-      successModal.classList.add('flex');
-
-      // Trigger animation
-      setTimeout(() => {
-        modalContent.classList.remove('scale-95', 'opacity-0');
-        modalContent.classList.add('scale-100', 'opacity-100');
-      }, 10);
-
-      // Reset form
-      joinForm.reset();
-    });
 
     function closeModal() {
       // Reverse animation
@@ -516,40 +499,52 @@
         successModal.classList.add('hidden');
         successModal.classList.remove('flex');
       }, 300);
-      document.querySelector("form").addEventListener("submit", async (e) => {
-        e.preventDefault();
+    } // <-- closeModal is properly closed here now
 
-        const emailInput = document.querySelector("input[type='email']").value;
-        const btn = document.querySelector("button[type='submit']");
-        const originalText = btn.innerText;
+    joinForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-        btn.innerText = "Transmitting... 🐾";
+      // Grab the email BEFORE resetting the form
+      const emailInput = document.getElementById('email').value;
+      const submitBtn = joinForm.querySelector("button[type='submit']");
+      const originalHTML = submitBtn.innerHTML;
 
-        let response; // Declared outside the try block
+      submitBtn.innerText = "Transmitting... 🐾";
 
-        try {
-          // Added https:// to the URL
-          response = await fetch("https://emil.uuuuuzhhh.workers.dev", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({email: emailInput})
-          });
+      let response;
 
-          if (response.ok) {
-            btn.innerText = "Welcome Comrade :3";
-            btn.classList.add("bg-pink-600");
-          } else {
-            btn.innerText = "Error. Anti-catboy interference detected.";
-          }
-        } catch (error) {
-          btn.innerText = "Connection to Emil failed.";
+      try {
+        response = await fetch("https://emil.uuuuuzhhh.workers.dev", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({email: emailInput})
+        });
+
+        if (response.ok) {
+          submitBtn.innerText = "Welcome Comrade :3";
+          submitBtn.classList.add("bg-pink-600");
+
+          // Trigger the success modal
+          successModal.classList.remove('hidden');
+          successModal.classList.add('flex');
+          setTimeout(() => {
+            modalContent.classList.remove('scale-95', 'opacity-0');
+            modalContent.classList.add('scale-100', 'opacity-100');
+          }, 10);
+
+          // Now it's safe to reset the form
+          joinForm.reset();
+        } else {
+          submitBtn.innerText = "Error. Anti-catboy interference detected.";
         }
+      } catch (error) {
+        submitBtn.innerText = "Connection to Emil failed.";
+      }
 
-        setTimeout(() => {if (!response?.ok) btn.innerText = originalText;}, 3000);
-      });
-
-  // Checkbox visual styling hack for standard checkboxes if needed
-  // (Handled primarily by Tailwind classes in HTML)
+      setTimeout(() => {
+        if (!response?.ok) submitBtn.innerHTML = originalHTML;
+      }, 3000);
+    });
   </script>
 </body>
 
