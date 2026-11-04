@@ -34,14 +34,14 @@ export default {
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            from: "MCP High Command <admin@implodium.dev>",
+            from: "Hivatalos Magyar Catboy Párt <rawr@implodium.dev>",
             to: email,
             subject: `Üdv a pártban, ${name}! :3`,
             html: `
               <h2>Üdv a soraikban, ${name}!</h2>
               <p>A jelentkezési lapodat Kolbászka miniszterjelölt személyesen hitelesítette.</p>
               <p>A havi támogatási adagod (1 tálca <strong>${chosenDrink}</strong>) és a hivatalos állami macskafüleid feladásra kerültek.</p>
-              <p><em>Nyah! 🐾</em></p>
+              <p><em>mewo! \\(^w^)</em></p>
             `
           })
         });
